@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="icon" href="favicon.ico?v=1" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico?v=1" type="image/x-icon">
+        <link rel="stylesheet" href="reset.css">
+        <title>DESKMATIK</title>
+    </head>
+    <style>
+        * { box-sizing: border-box; border: none; outline: none; background: none; appearance: none; }
+        body { background: #16a085; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
+    </style>
+    <body>
+        <div id="root"></div>
+        <script src="lib/preact@10.5.12.js"></script>
+        <script src="lib/preact-router@3.2.1.js"></script>
+        <script src="lib/preact-hooks@10.5.12.js"></script>
+        <script src="lib/scoped-style@1.9.0.js"></script>
+        <script src="lib/htm@3.0.4.js"></script>
+        <script>
+            const config = { baseUrl: '' };
+            const libs = {
+                html: htm.bind(preact.createElement),
+                preact: { ...preact, ...preactHooks,  ...preactRouter },
+                styled: window['scoped-style'](preact.createElement),
+            };
+            let module = (fn) => fn(config, libs);
+        </script>
+        <script src="src/hooks.js"></script>
+        <script>module = (fn) => fn(config, libs, hooks)</script>
+        <script src="src/components.js"></script>
+        <script>module = (fn) => fn(config, libs, hooks, components)</script>
+        <script src="src/pages.js"></script>
+        <script>module = (fn) => fn(config, libs, hooks, components, pages)</script>
+        <script src="src/app.js"></script>
+        <script>
+            libs.preact.render(libs.html`<${App} />`, document.getElementById('root'));
+        </script>
+    </body>
+</html>
