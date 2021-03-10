@@ -1,16 +1,18 @@
 const pages = module((
     { baseUrl },
     { html, preact},
-    { useStatus, useMouseDown, useNetworks },
-    { Form, Input, Select, Button, Wrapper, IconLink, CircleButton, ArrowButton, SettingsIcon }) => {
+    { useStatus, useInterval, useNetworks },
+    { Form, Input, Select, Button, IconLink, CircleButton, ArrowButton, SettingsIcon }) => {
 
     const Controls = () => {
-        const moveUpDown = useMouseDown(async (dir) => {
+        const { useEffect } = preact;
+
+        const {start: moveStart, stop: moveStop } = useInterval(async (dir) => {
             const body =  new FormData();
             body.append('dir', dir);
 
             await fetch(`${baseUrl}/move`, { method: 'POST', body });
-        });
+        }, 100);
 
         const moveToPosition = async (pos) => {
             const body = new FormData();
@@ -19,16 +21,34 @@ const pages = module((
             await fetch(`${baseUrl}/move`, { method: 'POST', body });
         };
 
+        const moveUpStart = (event) => {
+            event.preventDefault();
+            moveStart(1);
+        };
+
+        const moveDownStart = (event) => {
+            event.preventDefault();
+            moveStart(-1)
+        };
+
+        useEffect(() => {
+            document.addEventListener('mouseup', moveStop);
+            document.addEventListener('touchend', moveStop);
+            return () => {
+                document.removeEventListener('mouseup', moveStop);
+                document.addEventListener('touchend', moveStop);
+            }
+        }, []);
+
         return html`
-            <${Wrapper}>
-                <${ArrowButton} onMouseDown=${() => moveUpDown(1)} arrow="up" />
-                <${ArrowButton} onMouseDown=${() => moveUpDown(-1)} arrow="down" />
-                <${CircleButton} onClick=${() => moveToPosition(1)}>1</>
-                <${CircleButton} onClick=${() => moveToPosition(2)}>2</>
-                <${CircleButton} onClick=${() => moveToPosition(3)}>3</>
-                <${IconLink} href="/settings">
-                    <${SettingsIcon} />
-                </>
+            <${ArrowButton} onMouseDown=${moveUpStart} onTouchStart=${moveUpStart} arrow="up" />
+            <${ArrowButton} onMouseDown=${moveDownStart} onTouchStart=${moveDownStart} arrow="down" />
+
+            <${CircleButton} onClick=${() => moveToPosition(1)}>1</>
+            <${CircleButton} onClick=${() => moveToPosition(2)}>2</>
+            <${CircleButton} onClick=${() => moveToPosition(3)}>3</>
+            <${IconLink} href="/settings">
+                <${SettingsIcon} />
             </>
         `;
     };
@@ -69,17 +89,16 @@ const pages = module((
         };
 
         return html`
-            <${Wrapper}>
-                <${Form} onSubmit=${handleSubmit}>
-                    <${Select}>
-                        <select name="ssid">
-                            ${networks.payload && networks.payload.map(({ssid}) => html`<option value=${ssid}>${ssid}</option>`)}
-                        </select>
-                    </>
-                    <${Input} name="pass" type="password" placeholder="Enter password" />
-                    <${Button}>Connect</>
-                </> 
+            <${Form} onSubmit=${handleSubmit}>
+                <${Select}>
+                    <select name="ssid">
+                        ${networks.payload && networks.payload.map(({ssid}) => html`<option value=${ssid}>${ssid}</option>`)}
+                    </select>
+                </>
+                <${Input} name="pass" type="password" placeholder="Enter password" />
+                <${Button}>Connect</>
             </>
+            
         `;
     };
 

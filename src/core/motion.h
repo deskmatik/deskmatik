@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../include/common.h"
 #include "./uart.h"
 
 class Motion {

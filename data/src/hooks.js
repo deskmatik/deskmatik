@@ -12,17 +12,6 @@ const hooks = module(({ baseUrl }, { preact }) => {
         return { start, stop };
     };
 
-    const useMouseDown = (callback) => {
-        const { start, stop } = useInterval(callback, 100);
-
-        useEffect(() => {
-            document.addEventListener('mouseup', stop);
-            return () => document.removeEventListener('mouseup', stop);
-        }, []);
-
-        return start;
-    };
-
     const useRequest = () => {
         const [loading, setLoading] = useState(false);
         const [response, setResponse] = useState({});
@@ -55,6 +44,6 @@ const hooks = module(({ baseUrl }, { preact }) => {
     return {
         useRequest,
         useNetworks,
-        useMouseDown,
+        useInterval,
     }
 });

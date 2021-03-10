@@ -1,4 +1,3 @@
-#include "../include/common.h"
 #include "./uart.h"
 
 Uart uart;
