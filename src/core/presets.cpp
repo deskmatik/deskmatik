@@ -1,25 +1,14 @@
-#include "./motion.h"
+#include "./presets.h"
 
-Motion motion;
+Presets presets;
 
-void Motion::move(int dir) {
-    uint8_t cmdBtnUp[] = CMD_BUTTON_UP;
-    uint8_t cmdBtnDown[] = CMD_BUTTON_DOWN;
-
-    switch(dir) {
-        case  1:
-            uart.write(cmdBtnUp, sizeof(cmdBtnUp));
-            break;
-        case -1:
-            uart.write(cmdBtnDown, sizeof(cmdBtnDown));
-            break;
-    }
-}
-
-void Motion::moveTo(int pos) {
+void Presets::savePosition(int pos) {
+    uint8_t cmdBtnM[] = CMD_BUTTON_M;
     uint8_t cmdBtn1[] = CMD_BUTTON_1;
     uint8_t cmdBtn2[] = CMD_BUTTON_2;
     uint8_t cmdBtn3[] = CMD_BUTTON_3;
+
+    uart.write(cmdBtnM, sizeof(cmdBtnM));
 
     switch(pos) {
         case 1:

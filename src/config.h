@@ -1,17 +1,18 @@
 #pragma once
 
-#define BOARD BOARD_NODE_MCU_10
+#define BOARD ESP8266
 #define DESK  DESK_FLEXISPOT
 
-#define HTTP_SERVER_PORT 80
-
 #define AP_SSID "DESKMATIK"
-#define AP_PASS "12345678"
+#define AP_PASS "123456789"
+
+#define HTTP_SERVER_PORT 80
 #define WIFI_CONNECTION_TIMEOUT 10000
 
-#define STATIC_IP
-#if defined(STATIC_IP)
+#define ENABLE_STATIC_IP
+#if defined(ENABLE_STATIC_IP)
+    #define STATIC_IP { 192, 168, 0,   254 }
+    #define GATEWAY   { 192, 168, 0,   1   }
+    #define SUBNET    { 255, 255, 255, 0   }
 #endif
-
-
 

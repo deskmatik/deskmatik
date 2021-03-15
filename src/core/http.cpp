@@ -14,34 +14,27 @@ void Http::handleMove() {
     const int pos = server.arg("pos").toInt();
     const int dir = server.arg("dir").toInt();
 
-    switch(dir) {
-        case  1: motion.stepUp();
-            break;
-        case -1: motion.stepDown();
-            break;
-    }
-
-    switch(pos) {
-        case 1: motion.moveToPos1();
-            break;
-        case 2: motion.moveToPos2();
-            break;
-        case 3: motion.moveToPos3();
-            break;
-    }
+    motion.move(dir);
+    motion.moveTo(pos);
 
     server.send(200, "application/json", "{}");
 }
 
+void Http::handleSavePosition() {
+    const int pos = server.arg("pos").toInt();
+    presets.savePosition(pos);
+    server.send(200, "application/json", "{}");
+}
+
 void Http::handleScanNetworks() {
-    int total = Wifi::scanNetworks();
+    int total = wifi.scanNetworks();
 
     String response = "[";
     for (int i = 0; i < total; ++i) {
         if(i != 0) response += ",";
-        response += "{\"ssid\":\"" + Wifi::getSSID(i) + "\",";
-        response += "\"rssi\":" + String(Wifi::getRSSI(i)) + ",";
-        response += "\"connected\":" + String(Wifi::getSSID(i) == Wifi::getSSID()) + "}";
+        response += "{\"ssid\":\"" + wifi.getSSID(i) + "\",";
+        response += "\"rssi\":" + String(wifi.getRSSI(i)) + ",";
+        response += "\"active\":" + String(wifi.getSSID(i) == wifi.getSSID()) + "}";
     }
     response += "]";
     server.send(200, "application/json", response);
@@ -60,16 +53,16 @@ void Http::handleConnect() {
         return server.send(400, "application/json", "{}");
     }
 
-    Wifi::disconnect();
-    Wifi::connect(ssid, pass);
+    wifi.disconnect();
+    wifi.connect(ssid, pass);
 
-    if (Wifi::getStatus() == WL_CONNECTED) {
+    if (wifi.getStatus() == WL_CONNECTED) {
         String response  = "{\"status\":";
-               response += String(Wifi::getStatus());
+               response += String(wifi.getStatus());
                response += ",\"ip\":\"";
-               response += Wifi::getLocalIp().toString();
+               response += wifi.getLocalIp().toString();
                response += "\",\"ssid\":\"";
-               response += Wifi::getSSID();
+               response += wifi.getSSID();
                response += "\"}";
 
         server.send(200, "application/json", response);
@@ -77,8 +70,8 @@ void Http::handleConnect() {
         server.send(403, "application/json", "{}");
     }
 
-    delay(5000);
-    Wifi::stopAP();
+    delay(1000);
+    wifi.stopAP();
 }
 
 void Http::init() {
@@ -106,6 +99,7 @@ void Http::init() {
     server.on("/move", HTTP_POST, Http::handleMove);
     server.on("/connect", HTTP_POST, Http::handleConnect);
     server.on("/networks", HTTP_GET, Http::handleScanNetworks);
+    server.on("/save/position", HTTP_POST, Http::handleSavePosition);
 
     server.onNotFound(Http::handleNotFound);
 }

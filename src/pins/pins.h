@@ -1,5 +1,5 @@
 #pragma once
 
-#if BOARD == BOARD_NODE_MCU_10
-  #include "./esp8266/pins_NODE_MCU_10.h"
+#if BOARD == BOARD_ESP8266
+  #include "./pins_ESP8266.h"
 #endif

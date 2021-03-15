@@ -2,13 +2,13 @@
 
 #include <EEPROM.h>
 
-#define SLOT_SIZE 16
+#define SLOT_SIZE 8
 
 class Eeprom {
     public:
-        static void init();
-        static void put(int index, char value[]);
-        static void get(int index, char value[]);
+        void init();
+        void put(int index, char value[]);
+        void get(int index, char value[]);
 };
 
 extern Eeprom eeprom;

@@ -7,24 +7,24 @@
 
 class Wifi {
     public:
-        static void init();
-        static void stopAP();
-        static void connect(String ssid = "", String pass = "");
-        static void disconnect();
+        void init();
+        void stopAP();
+        void connect(String ssid = "", String pass = "");
+        void disconnect();
 
-        static int getMode();
-        static int getRSSI();
-        static int getRSSI(int n);
-        static int getStatus();
-        static int scanNetworks();
+        int getMode();
+        int getRSSI();
+        int getRSSI(int n);
+        int getStatus();
+        int scanNetworks();
 
-        static String getSSID();
-        static String getSSID(int n);
-        static IPAddress getLocalIp();
+        String getSSID();
+        String getSSID(int n);
+        IPAddress getLocalIp();
 
     private:
-        static void startSTA(String ssid = "", String pass = "");
-        static void startAP();
+        void startSTA(String ssid = "", String pass = "");
+        void startAP();
 
 };
 

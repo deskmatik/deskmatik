@@ -1,3 +1,3 @@
 #pragma once
 
-#define BOARD_NODE_MCU_10 1010
+#define BOARD_ESP8266 1

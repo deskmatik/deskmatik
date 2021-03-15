@@ -5,13 +5,8 @@
 
 class Motion {
     public:
-        static void stepUp();
-        static void stepDown();
-
-        static void moveToPos1();
-        static void moveToPos2();
-        static void moveToPos3();
-
+        void move(int dir);
+        void moveTo(int pos);
 };
 
 extern Motion motion;

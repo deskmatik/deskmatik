@@ -3,11 +3,10 @@
 Wifi wifi;
 
 void Wifi::init() {
-    #if defined(STATIC_IP)
-        // TODO: move to config.
-        IPAddress ip(192, 168, 0, 254);
-        IPAddress gateway(192, 168, 0, 1);
-        IPAddress subnet(255, 255, 255, 0);
+    #if defined(ENABLE_STATIC_IP)
+        IPAddress ip(STATIC_IP);
+        IPAddress gateway(GATEWAY);
+        IPAddress subnet(SUBNET);
 
         WiFi.config(ip, gateway, subnet);
     #endif
