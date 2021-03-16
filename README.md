@@ -17,7 +17,7 @@ The firmware has simple WiFi connection interface where you can submit your WiFi
 - Add support for other desks with similar functionality and communication protocol.
 
 ### How to build the source code?
-It can be built using arduine IDE. Currently supports ESP8266 boards.
+It can be built using Arduino IDE. Currently supports ESP8266 boards.
 Please reffer to a ESP8266 documentation https://github.com/esp8266/Arduino
 
 ### Wiring (Flexispot)
