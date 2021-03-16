@@ -40,7 +40,7 @@ Now, when the ESP is connected to your local network you can navigate to IP (eit
 
 ### To be done
 - Create step by step documentation.
-- OTA updates.
+- Add OTA updates.
 - Add PlatformIO support.
 - Add ESP32 support.
 - Add MQTT communication protocol.
