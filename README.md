@@ -40,14 +40,15 @@ Note: In order to keep my original cable I used a simple ethernet cable. Cable c
 
 ### To be done
 - Create step by step documentation.
-- Add PlatformIO support.
-- Add ESP32 main board support.
-- Integrate MQTT communication protocol.
-- Make home assistant integration (Google, Alexa, etc...).
-- Create native mobile app (ReactNative).
-- More features like Pin Code, scheduled movements to the desired position, etc...
 - OTA updates.
-- Add support for other desks with similar functionality and communication protocol.
+- Add PlatformIO support.
+- Add ESP32 support.
+- Add MQTT communication protocol.
+- Create native mobile app (ReactNative).
+- Create Chrome browser plugin.
+- More features like Pin code, scheduled movements to the desired position, etc...
+- Home assistant integration (Google Home, Amazon Alexa, etc...).
+- Add support for other desks with similar functionality and communication protocol (a bigger community is required).
 
 ### Screenshot
 ![Screenshot](https://user-images.githubusercontent.com/5584814/110712239-2c047580-8201-11eb-805a-a66d8a0dd03e.jpg)
