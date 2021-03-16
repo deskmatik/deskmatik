@@ -29,7 +29,7 @@ Please reffer to a ESP8266 documentation https://github.com/esp8266/Arduino
 | 8                  | yellow | brown           | VDD (5V)                                                        |VIN         |
 
 ### Supported desks
-- Flexispot E5 desk was tested but should be good for other other desks from Flexipot.
+- Flexispot E5 desk was tested but should be good for any other desks from Flexipot.
 
 ### Documentation
 - To be done.
