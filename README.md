@@ -40,4 +40,7 @@ Note: In order to keep my original cable I used a simple ethernet cable. Cable c
 ### Configuration
  - check config.h file.
 
+### Screenshot
+![Screenshot](https://user-images.githubusercontent.com/5584814/110712239-2c047580-8201-11eb-805a-a66d8a0dd03e.jpg)
+
 
