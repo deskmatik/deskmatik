@@ -7,7 +7,7 @@ The firmware has simple WiFi connection interface where you can submit your WiFi
 
 ### To be done:
 - Create step by step documentation.
-- PlatformIO support.
+- Add PlatformIO support.
 - Add ESP32 main board support.
 - Integrate MQTT communication protocol.
 - Make home assistant integration (Google, Alexa, etc...).
