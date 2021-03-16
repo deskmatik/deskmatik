@@ -4,7 +4,7 @@ Open source smart desk controller https://deskmatik.com
 Open Source solution for standing desks which does not support wireless control out of the box. The project goal refers to create an universal firmware for standing desks and offer a set of custom features to the desk owners like: wireless control, home assistant integration, scheduled movements and much more.
 
 ### Set up a Wi-Fi connection
-The firmware has simple web interface where you can setup your WiFi network.
+The firmware has simple web interface where you can set up your WiFi network.
 
 The ESP tries to connect to the WiFi network. In case it fails or WiFi was not configured "Access Point" mode is started. In this mode you can connect to its WiFi network and set up the your local network credentials by following the steps below:
 1. Search for DESKMATIK wifi network.
