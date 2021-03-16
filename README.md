@@ -18,7 +18,7 @@ The firmware has simple WiFi connection interface where you can submit your WiFi
 
 ### How to build the source code?
 It can be built using Arduino IDE. Currently supports ESP8266 boards.
-Please reffer to a ESP8266 documentation https://github.com/esp8266/Arduino
+Please reffer to ESP8266 documentation https://github.com/esp8266/Arduino
 
 ### Wiring (Flexispot)
 | Flexispot RJ45 PIN | Color  | LAN cable color | Description                                                     |ESP8266 GPIO|
