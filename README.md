@@ -21,7 +21,7 @@ It can be built using arduine IDE. Currently supports ESP8266 boards.
 Please reffer to a ESP8266 documentation https://github.com/esp8266/Arduino
 
 ### Wiring (Flexispot)
-| Flexispot RJ45 PIN | Color  | Lan cable color | Description                                                     |ESP8266 GPIO|
+| Flexispot RJ45 PIN | Color  | LAN cable color | Description                                                     |ESP8266 GPIO|
 |--------------------|--------|-----------------|-----------------------------------------------------------------|------------|
 | 1                  | brown  | white-orange    | N/C                                                             |            |
 | 2                  | white  | orange          | N/C                                                             |            |
