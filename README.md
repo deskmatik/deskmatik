@@ -21,16 +21,18 @@ It can be built using Arduino IDE. Currently supports ESP8266 boards.
 Please reffer to ESP8266 documentation https://github.com/esp8266/Arduino
 
 ### Wiring (Flexispot)
-| RJ45 PIN           | Color  | LAN cable color | Description                                                     |ESP8266 GPIO|
-|--------------------|--------|-----------------|-----------------------------------------------------------------|------------|
-| 1                  | brown  | white-orange    | N/C                                                             |            |
-| 2                  | white  | orange          | N/C                                                             |            |
-| 3                  | purple | white-green     | N/C                                                             |            |
-| 4                  | red    | blue            | Enable/Awake                                                    |D5          |
-| 5                  | green  | white-blue      | RX (of remote)                                                  |D7/RX2      |
-| 6                  | black  | green           | TX (of remote)                                                  |D8/TX2      |
-| 7                  | blue   | white-brown     | GND                                                             |GND         |
-| 8                  | yellow | brown           | VDD (5V)                                                        |VIN         |
+| RJ45 PIN           | Color  | Ethernet cable color | Description                                                     |ESP8266 GPIO|
+|--------------------|--------|----------------------|-----------------------------------------------------------------|------------|
+| 1                  | brown  | white-orange         | N/C                                                             |            |
+| 2                  | white  | orange               | N/C                                                             |            |
+| 3                  | purple | white-green          | N/C                                                             |            |
+| 4                  | red    | blue                 | Enable/Awake                                                    |D5          |
+| 5                  | green  | white-blue           | RX (of remote)                                                  |D7/RX2      |
+| 6                  | black  | green                | TX (of remote)                                                  |D8/TX2      |
+| 7                  | blue   | white-brown          | GND                                                             |GND         |
+| 8                  | yellow | brown                | VDD (5V)                                                        |VIN         |
+
+Note: In order to keep my original cable I used a simple ethernet cable. Cable color mapping is provided in table above.
 
 ### Supported desks
 - Flexispot (tested with Flexispot E5 but should be good for any other desks from Flexipot)
