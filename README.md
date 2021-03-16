@@ -30,7 +30,7 @@ Please reffer to a ESP8266 documentation https://github.com/esp8266/Arduino
 
 ### Supported desks
 - Flexispot E5 desk was tested but should be good for other other desks from Flexipot.
-- 
+
 ### Documentation
 - To be done.
 
