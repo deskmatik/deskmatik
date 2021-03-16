@@ -11,6 +11,7 @@ Open Source solution for standing desks which does not support wireless control 
 - Create native mobile app (ReactNative).
 - More features like Pin Code, scheduled movements to the desired position, etc...
 - OTA updates.
+- Add support for other desks with similar functionality and communication protocol.
 
 ### How to build the source code?
 It can be built using arduine IDE. Currently supports ESP8266 boards.
