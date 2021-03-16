@@ -6,7 +6,7 @@ Open Source solution for standing desks which does not support wireless control 
 The firmware has simple WiFi connection interface where you can submit your WiFi network credentials. ESP tries to connect to the WiFi network, in case it fails the ESP starts the Access Point mode. In this mode you can connect to its WiFi network (search for DESKMATIK wifi network and connect to it using your phone or pc), navigate to default IP which is 192.168.4.1 in web browser and setup your WiFi network credentials on settings page. The desk control is now done over simple http requests.
 
 ### To be done:
-- Detailed documentation.
+- Create step by step documentation.
 - PlatformIO support.
 - Add ESP32 main board support.
 - Integrate MQTT communication protocol.
