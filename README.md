@@ -15,7 +15,7 @@ DESKMATIK is open source solution for standing desks which does not support wire
 | 7        | blue                 | white-brown          | GND               |GND         |
 | 8        | yellow               | brown                | VDD (5V)          |VIN         |
 
-Note: In order to keep my original cable I used a simple ethernet cable. Cable color mapping is provided in table above.
+Note: In order to keep my original cable a simple ethernet cable can be used. Ethernet cable color mapping is provided in table above.
 
 ### How to build the source code?
 It can be built using Arduino IDE. Currently supports ESP8266 boards.
