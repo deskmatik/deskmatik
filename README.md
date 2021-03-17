@@ -1,7 +1,7 @@
 # DESKMATIK
 Open source smart desk controller https://deskmatik.com
 
-DESKMATIK is Open source solution for standing desks which does not support wireless control out of the box. The project goal refers to create an universal firmware for standing desks and offer a set of custom features to the desk owners like: wireless control, home assistant integration, scheduled movements and much more.
+DESKMATIK is open source solution for standing desks which does not support wireless control out of the box. The project goal refers to create an universal firmware for standing desks and offer a set of custom features to the desk owners like: wireless control, home assistant integration, scheduled movements and much more.
 
 ### Wiring (Flexispot)
 | RJ45 PIN | Original cable color | Ethernet cable color | Description       |ESP8266 GPIO|
