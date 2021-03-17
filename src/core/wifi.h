@@ -1,9 +1,11 @@
 #pragma once
-
 #include "../include/common.h"
-#include "../core/eeprom.h"
 
-#include <ESP8266WiFi.h>
+#if BOARD == BOARD_ESP32
+    #include <WiFi.h>
+#else
+    #include <ESP8266WiFi.h>
+#endif
 
 class Wifi {
     public:

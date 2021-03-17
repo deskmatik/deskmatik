@@ -15,6 +15,7 @@ void Wifi::init() {
 }
 
 void Wifi::startSTA(String ssid, String pass) {
+    WiFi.hostname(HOSTNAME);
     WiFi.begin(ssid, pass);
 
     Serial.println("Connecting to wifi...");
@@ -56,7 +57,6 @@ void Wifi::stopAP() {
 void Wifi::connect(String ssid, String pass) {
     Wifi::startSTA(ssid, pass);
     Wifi::startAP();
-
 
     if(WiFi.status() != WL_CONNECTED) {
         Serial.println("Can't connect to wifi.");

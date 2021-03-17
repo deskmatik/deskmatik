@@ -6,9 +6,9 @@ void setup() {
     Serial.println();
 
     uart.init();
-    eeprom.init();
     wifi.init();
     http.init();
+    mdns.init();
 
     pinMode(EN_PIN, OUTPUT);
     digitalWrite(EN_PIN, HIGH);
@@ -16,4 +16,5 @@ void setup() {
 
 void loop() {
     http.listen();
+    mdns.update();
 }
