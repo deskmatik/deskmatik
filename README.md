@@ -52,6 +52,7 @@ Now, when the ESP is connected to your local network you can navigate to it's IP
 
 ### Screenshot
 ![Screenshot](https://user-images.githubusercontent.com/5584814/110712239-2c047580-8201-11eb-805a-a66d8a0dd03e.jpg)
+![selected](https://user-images.githubusercontent.com/5584814/112664301-18d8e300-8e5a-11eb-9479-b13f13a7c5fe.png)
 
 ### Thanks
 Thanks to [nv1t](https://github.com/nv1t) for his [standing desk interceptor](https://github.com/nv1t/standing-desk-interceptor) which made possible to kickstart this project.
