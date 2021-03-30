@@ -36,7 +36,8 @@ The ESP tries to connect to the WiFi network. In case it fails or WiFi was not c
 Now, when the ESP is connected to your local network you can navigate to it's IP (either static IP configured in config.h or provided by DHCP) and controll the desk using web interface. You also you can navigate to http://deskmatik.local/ in case your OS supports mDNS protocol. Note, Microsoft doesn't support mDNS.
 
 ### Supported desks
-- Flexispot (tested with Flexispot E5 but should be good for any other desks from Flexipot)
+- Flexispot (tested with Flexispot E5 but should be good for other desks from Flexipot)
+- 
 
 ### To be done
 - Create step by step documentation.
