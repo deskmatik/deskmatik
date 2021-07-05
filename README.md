@@ -20,7 +20,7 @@ Note: In order to keep the original cable an ethernet cable can be used. Etherne
 ### How to build the source code?
 It can be built using Arduino IDE. Currently supports ESP8266 boards.
 Please reffer to ESP8266 documentation https://github.com/esp8266/Arduino
-IMPOTRANT: Don't forget to ulpload the files from "data" folder to SPIFFS
+IMPORTANT: Don't forget to ulpload the files from "data" folder to SPIFFS
 
 ### Configuration
  - check config.h file.
